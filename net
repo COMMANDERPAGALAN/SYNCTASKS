@@ -1,0 +1,172 @@
+smartStudyPlannerSystem\Form4Tasks.vb
+Imports System.Windows.Forms
+
+Partial Public Class Tasks
+    ' Matches controls declared in Form4TASKS.Designer.vb:
+    ' Panel4, LinkLabel1..4, Button2..5, MenuStrip items PROFILEToolStripMenuItem, TASKToolStripMenuItem, PROGRESSToolStripMenuItem, REPORTSToolStripMenuItem, LOGOUTToolStripMenuItem1
+
+    Private Sub TASKS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Ensure DB is connected for child forms that might use it
+        ConnectDB()
+
+        ' Wire link labels
+        AddHandler LinkLabel1.LinkClicked, AddressOf LinkLabel1_LinkClicked
+        AddHandler LinkLabel2.LinkClicked, AddressOf LinkLabel2_LinkClicked
+        AddHandler LinkLabel3.LinkClicked, AddressOf LinkLabel3_LinkClicked
+        AddHandler LinkLabel4.LinkClicked, AddressOf LinkLabel4_LinkClicked
+
+        ' Wire side buttons
+        AddHandler Button2.Click, AddressOf ButtonSubject_Click
+        AddHandler Button3.Click, AddressOf ButtonDeadline_Click
+        AddHandler Button4.Click, AddressOf ButtonDuration_Click
+        AddHandler Button5.Click, AddressOf ButtonCalendar_Click
+
+        ' Wire menu items
+        AddHandler PROFILEToolStripMenuItem.Click, AddressOf MenuProfile_Click
+        AddHandler TASKToolStripMenuItem.Click, AddressOf MenuPeople_Click
+        AddHandler PROGRESSToolStripMenuItem.Click, AddressOf MenuProgress_Click
+        AddHandler REPORTSToolStripMenuItem.Click, AddressOf MenuReports_Click
+        AddHandler LOGOUTToolStripMenuItem1.Click, AddressOf MenuLogout_Click
+    End Sub
+
+    Private Sub ShowInPanel(frm As Form)
+        If Panel4 Is Nothing Then Return
+        Panel4.Controls.Clear()
+        frm.TopLevel = False
+        frm.FormBorderStyle = FormBorderStyle.None
+        frm.Dock = DockStyle.Fill
+        Panel4.Controls.Add(frm)
+        frm.Show()
+    End Sub
+
+    ' LinkLabel handlers
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
+        ShowInPanel(New FormSubject())
+    End Sub
+
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
+        ShowInPanel(New FormInstructor()) ' If you have a FormInstructor designer; otherwise change to appropriate form
+    End Sub
+
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
+        ShowInPanel(New FormDeadline())
+    End Sub
+
+    Private Sub LinkLabel4_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
+        ShowInPanel(New FormDuration())
+    End Sub
+
+    ' Side buttons
+    Private Sub ButtonSubject_Click(sender As Object, e As EventArgs)
+        ShowInPanel(New FormSubject())
+    End Sub
+
+    Private Sub ButtonDeadline_Click(sender As Object, e As EventArgs)
+        ShowInPanel(New FormDeadline())
+    End Sub
+
+    Private Sub ButtonDuration_Click(sender As Object, e As EventArgs)
+        ShowInPanel(New FormDuration())
+    End Sub
+
+    Private Sub ButtonCalendar_Click(sender As Object, e As EventArgs)
+        ' show a calendar directly inside Panel4 using a MonthCalendar if you prefer - here we restore Panel4 contents
+        Panel4.Controls.Clear()
+        Dim mc As New MonthCalendar With {
+            .Dock = DockStyle.Fill,
+            .CalendarDimensions = New Size(3, 2)
+        }
+        Panel4.Controls.Add(mc)
+    End Sub
+
+    ' Menu handlers (simple examples)
+    Private Sub MenuProfile_Click(sender As Object, e As EventArgs)
+        ' show profile/login form inside panel; replace FormLogin with your form name
+        ShowInPanel(New FormLogin())
+    End Sub
+
+    Private Sub MenuPeople_Click(sender As Object, e As EventArgs)
+        ShowInPanel(New FormSubject()) ' placeholder
+    End Sub
+
+    Private Sub MenuProgress_Click(sender As Object, e As EventArgs)
+        ShowInPanel(New FormDuration()) ' placeholder
+    End Sub
+
+    Private Sub MenuReports_Click(sender As Object, e As EventArgs)
+        ShowInPanel(New FormDeadline()) ' placeholder
+    End Sub
+
+    Private Sub MenuLogout_Click(sender As Object, e As EventArgs)
+        Application.Restart()
+    End Sub
+End Class
+
+smartStudyPlannerSystem\FormSubject.vb
+Imports System.Windows.Forms
+
+Public Class FormSubject
+    Inherits Form
+
+    Public Sub New()
+        InitializeComponent()
+    End Sub
+
+    Private Sub InitializeComponent()
+        Me.SuspendLayout()
+        Dim lbl As New Label With {
+            .Text = "Subject view (placeholder)",
+            .Dock = DockStyle.Fill,
+            .TextAlign = Drawing.ContentAlignment.MiddleCenter
+        }
+        Me.Controls.Add(lbl)
+        Me.BackColor = Drawing.Color.White
+        Me.ResumeLayout(False)
+    End Sub
+End Class
+
+smartStudyPlannerSystem\FormDeadline.vb
+Imports System.Windows.Forms
+
+Public Class FormDeadline
+    Inherits Form
+
+    Public Sub New()
+        InitializeComponent()
+    End Sub
+
+    Private Sub InitializeComponent()
+        Me.SuspendLayout()
+        Dim lbl As New Label With {
+            .Text = "Deadline view (placeholder)",
+            .Dock = DockStyle.Fill,
+            .TextAlign = Drawing.ContentAlignment.MiddleCenter
+        }
+        Me.Controls.Add(lbl)
+        Me.BackColor = Drawing.Color.White
+        Me.ResumeLayout(False)
+    End Sub
+End Class
+
+smartStudyPlannerSystem\FormDuration.vb
+Imports System.Windows.Forms
+
+Public Class FormDuration
+    Inherits Form
+
+    Public Sub New()
+        InitializeComponent()
+    End Sub
+
+    Private Sub InitializeComponent()
+        Me.SuspendLayout()
+        Dim lbl As New Label With {
+            .Text = "Duration view (placeholder)",
+            .Dock = DockStyle.Fill,
+            .TextAlign = Drawing.ContentAlignment.MiddleCenter
+        }
+        Me.Controls.Add(lbl)
+        Me.BackColor = Drawing.Color.White
+        Me.ResumeLayout(False)
+    End Sub
+End Class

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <ID>f153bbf2-fcb8-4391-8500-01301d3b03fe</ID>
+    <Role>Student</Role>
+    <Username>christian</Username>
+    <Password>pagalan</Password>
+    <FirstName>CPP</FirstName>
+    <LastName />
+    <Gender>Male</Gender>
+    <Department>COE</Department>
+  </User>
+  <User>
+    <ID>0dfbe593-a91b-4bb3-b21d-e255977030ed</ID>
+    <Role>Student</Role>
+    <Username>keziah</Username>
+    <Password>roman</Password>
+    <FirstName>Keziah</FirstName>
+    <LastName>R</LastName>
+    <Gender>Female</Gender>
+    <Department>Nursing</Department>
+  </User>
+  <User>
+    <ID>7292f5cb-5093-48dc-a66d-41a3e61daae4</ID>
+    <Role>Student</Role>
+    <Username>19832708</Username>
+    <Password>pagalan</Password>
+    <FirstName>chris</FirstName>
+    <LastName>coe</LastName>
+    <Gender>Male</Gender>
+    <Department>tian</Department>
+  </User>
+</ArrayOfUser>

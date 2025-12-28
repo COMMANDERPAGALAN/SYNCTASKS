@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTaskSubmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TaskSubmission>
+    <SubmissionID>ff118c6a-e244-420f-b2cf-f0c3ba3443a6</SubmissionID>
+    <TaskID>72970ea4-6f8b-4f8e-a3b2-b72125874243</TaskID>
+    <StudentID>christian</StudentID>
+    <StudentName>c c</StudentName>
+    <SubmittedFileNames>
+      <string>LUFFY FINAL FORM.jpg</string>
+    </SubmittedFileNames>
+    <SubmissionDate>2025-11-30T12:47:31.9325067+08:00</SubmissionDate>
+    <Status>Submitted</Status>
+    <InstructorFeedback />
+    <Score>0</Score>
+  </TaskSubmission>
+  <TaskSubmission>
+    <SubmissionID>1d10252a-0e23-4a6e-a546-6168b10081ca</SubmissionID>
+    <TaskID>73960c16-c44b-494d-b2cd-3089db5ebd4f</TaskID>
+    <StudentID>christian</StudentID>
+    <StudentName>CPP </StudentName>
+    <SubmittedFileNames>
+      <string>anonymous.jpg</string>
+    </SubmittedFileNames>
+    <SubmissionDate>2025-12-01T17:39:01.5526404+08:00</SubmissionDate>
+    <Status>Submitted</Status>
+    <InstructorFeedback />
+    <Score>0</Score>
+  </TaskSubmission>
+</ArrayOfTaskSubmission>

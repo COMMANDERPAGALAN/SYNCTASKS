@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <ID>3faf5bff-030f-47d9-977f-bf1121ae217a</ID>
+    <Role>Instructor</Role>
+    <Username>cris</Username>
+    <Password>nativ</Password>
+    <FirstName>Engr.</FirstName>
+    <LastName>Cris</LastName>
+    <Gender>Male</Gender>
+    <Department>CPE-COE</Department>
+  </User>
+</ArrayOfUser>
